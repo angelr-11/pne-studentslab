@@ -1,0 +1,11 @@
+When executing the main program, "result 1" runs without encountering any issues. The bug arises when the program
+executes "result 2", as it can be observed that eventually the variables have the following values:
+a = 0
+b = 2
+c = 3
+d = 3
+t0 = 2
+t1 = 0
+The next line that is executed after that point contains the operation t0 / t1, which becomes 2/0. This is an undefined
+value in math which python recognizes as ZeroDivisionError, which terminates the program. This was all due to the values
+input into the functions during line 17.
