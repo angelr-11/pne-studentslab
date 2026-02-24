@@ -10,4 +10,4 @@ final = clean[0:20]
 
 print("DNA File: U5.txt")
 print("The first 20 bases are:")
-print(final)
+print(final
