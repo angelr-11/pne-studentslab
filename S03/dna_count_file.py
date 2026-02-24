@@ -18,10 +18,12 @@ def counter(seq):
             total_len -= 1
     return total_len,a,c,g,t
 
-seq1 = input("Introduce the sequence:")
+f = open("dna.txt", "r")
+seq1 =f.read().strip()
+f.close()
+
 print("total_len:", counter(seq1)[0])
 print("A:", counter(seq1)[1])
 print("C:", counter(seq1)[2])
 print("G:", counter(seq1)[3])
 print("T:", counter(seq1)[4])
-
