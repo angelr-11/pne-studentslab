@@ -1,4 +1,4 @@
-import Seq0
+import seq0
 
 print("Testing the seq_ping() function")
-Seq0.seq_ping()
+seq0.seq_ping()

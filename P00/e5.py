@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from P00.Seq0 import seq_count
+from P00.seq0 import seq_count
 
 U5 = "../sequences/U5.txt"
 ADA = "../sequences/ADA.txt"

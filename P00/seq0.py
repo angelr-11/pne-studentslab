@@ -1,4 +1,3 @@
-from cola.hotkeys import RETURN
 
 
 def seq_ping():

@@ -1,5 +1,5 @@
-from P00.Seq0 import seq_reverse
-from P00.Seq0 import seq_read_fasta
+from P00.seq0 import seq_reverse
+from P00.seq0 import seq_read_fasta
 from pathlib import Path
 
 
