@@ -12,3 +12,8 @@ def base_printer(fasta_file):
     body = b[1]
     body = body.replace("\n", "")
     return body
+
+#e3
+
+def seq_len(body):
+    return len(body)
