@@ -17,3 +17,10 @@ def base_printer(fasta_file):
 
 def seq_len(body):
     return len(body)
+
+#e4
+
+def seq_count_base(gene):
+    bases_app = {["A", 0],["T", 0],["C", 0],["G",0]}
+    for i in range(len(gene)):
+
