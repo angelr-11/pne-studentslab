@@ -27,6 +27,9 @@ def seq_count_base(gene):
             bases_app[base] += 1
     return bases_app
 
-
+def seq_reverse(seq, n):
+    fragment = seq[:n]
+    reverse = fragment[::-1]
+    return fragment, reverse
 
 
