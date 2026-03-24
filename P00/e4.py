@@ -10,6 +10,3 @@ for seq in range(len(seqs)):
     clean_des_seq = Seq0.base_printer(desired_sequence)
     for base, number in Seq0.seq_count_base(clean_des_seq).items():
         print(f"{base}: {number}")
-
-
-
