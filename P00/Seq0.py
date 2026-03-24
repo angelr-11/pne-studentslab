@@ -32,4 +32,15 @@ def seq_reverse(seq, n):
     reverse = fragment[::-1]
     return fragment, reverse
 
-
+def seq_complement(seq):
+    complement = ""
+    for i in range(len(seq)):
+        if i == "A":
+            complement += "T"
+        elif i == "T":
+            complement += "A"
+        elif i == "G":
+            complement += "C"
+        elif i == "C":
+            complement += "G"
+    return complement
