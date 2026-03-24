@@ -8,7 +8,7 @@ def seq_ping():
 #e2
 
 def base_printer(fasta_file):
-    b = Path(fasta_file).read_text().split("\n",1)
+    b = Path(fasta_file).read_text().split("\n", 1)
     body = b[1]
     body = body.replace("\n", "")
     return body
@@ -21,6 +21,12 @@ def seq_len(body):
 #e4
 
 def seq_count_base(gene):
-    bases_app = {["A", 0],["T", 0],["C", 0],["G",0]}
-    for i in range(len(gene)):
+    bases_app = {"A": 0, "C": 0, "T": 0, "G": 0}
+    for base in gene:
+        if base in bases_app:
+            bases_app[base] += 1
+    return bases_app
+
+
+
 
