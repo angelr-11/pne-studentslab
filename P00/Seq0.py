@@ -44,3 +44,23 @@ def seq_complement(seq):
         elif seq[i] == "C":
             complement += "G"
     return complement
+
+def mfb_finder(seq):
+    counter = {"A":0, "T":0, "C":0, "G":0}
+    for i in seq:
+        if i in counter:
+            counter[i] += 1
+    max_base = None
+    max_count = -1
+    for k in counter:
+        if counter[k] > max_count:
+            max_count = counter[k]
+            max_base = k
+
+    return max_base
+
+
+
+
+
+
