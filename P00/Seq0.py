@@ -20,12 +20,12 @@ def seq_len(body):
 
 #e4 & e5
 
-def seq_count_base(gene):
-    bases_app = {"A": 0, "C": 0, "T": 0, "G": 0}
-    for base in gene:
-        if base in bases_app:
-            bases_app[base] += 1
-    return bases_app
+def seq_count_base(gene, base):
+    base_count = 0
+    for i in gene:
+        if i == base:
+            base_count += 1
+    return base_count
 
 #e6
 
