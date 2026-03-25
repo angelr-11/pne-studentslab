@@ -18,7 +18,7 @@ def base_printer(fasta_file):
 def seq_len(body):
     return len(body)
 
-#e4
+#e4 & e5
 
 def seq_count_base(gene):
     bases_app = {"A": 0, "C": 0, "T": 0, "G": 0}
@@ -27,11 +27,14 @@ def seq_count_base(gene):
             bases_app[base] += 1
     return bases_app
 
+#e6
+
 def seq_reverse(seq, n):
     fragment = seq[:n]
     reverse = fragment[::-1]
     return fragment, reverse
 
+#e7
 def seq_complement(seq):
     complement = ""
     for i in range(len(seq)):
@@ -45,6 +48,7 @@ def seq_complement(seq):
             complement += "G"
     return complement
 
+#e8
 def mfb_finder(seq):
     counter = {"A":0, "T":0, "C":0, "G":0}
     for i in seq:
@@ -58,8 +62,6 @@ def mfb_finder(seq):
             max_base = k
 
     return max_base
-
-
 
 
 

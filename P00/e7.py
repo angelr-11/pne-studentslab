@@ -1,7 +1,4 @@
 import Seq0
-from P00 import Seq0
-
-gene = Seq0.base_printer("../S04/sequences/U5.txt")
-print("-----| Exercise 7 |------")
-print("Gene U5:")
-print(f"fragment: {gene[:20]}\n"+f"complement:{Seq0.seq_complement(gene[:20])}")
+x = "../S04/sequences/U5.txt"
+seq = Seq0.base_printer(x)
+print(f"Gene U5:\nfragment:{seq[:20]} \ncomplement:{Seq0.seq_complement(seq[:20])}")
