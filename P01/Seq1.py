@@ -4,6 +4,7 @@ class Seq:
             self.str_bases = "NULL"
             print("NULL sequence created")
         elif not len(str_bases) == str_bases.count("A") + str_bases.count("T") + str_bases.count("G") + str_bases.count("C"):
+            self.str_bases = "ERROR"
             print("Invalid sequence")
         else:
             self.str_bases = str_bases

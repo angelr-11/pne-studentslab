@@ -1,9 +1,9 @@
 from Seq1 import Seq
-print("-----| Practice 1 Exercise 3 |------")
-seq = Seq("TATAC")
-seq2 = Seq()
-seq3 =Seq("Invalid")
 
-print(f"Sequence 1: {(seq)}")
-print(f"Sequence 2: {(seq2)}")
-print(f"Sequence 3: {(seq3)}")
+s1 = Seq()
+s2 = Seq("ACTGA")
+s3 = Seq("Invalid sequence")
+
+print(f"Sequence 1: {s1.str_bases}")
+print(f"Sequence 2: {s2.str_bases}")
+print(f"Sequence 3: {s3.str_bases}")
