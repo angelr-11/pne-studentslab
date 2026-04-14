@@ -1,3 +1,5 @@
+from importlib.resources import read_text
+from pathlib import Path
 class Seq:
     def __init__(self, str_bases=None):
         if str_bases is None:
@@ -54,3 +56,11 @@ class Seq:
                 elif self.str_bases[i] == "C":
                     complement += "G"
             return complement
+
+    def read_fasta(self,filename):
+        file = f"../S04/sequences/{filename}.txt"
+        contents = Path(file).read_text()
+        split_c = contents.split("\n", 1)
+        body = split_c[1]
+        self.str_bases = body
+        return self.str_bases
