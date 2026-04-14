@@ -11,6 +11,9 @@ class Seq:
             print("New sequence created")
 
     def len(self):
-        return len(self.str_bases)
+        if self.str_bases == "NULL" or self.str_bases == "ERROR":
+            return 0
+        else:
+            return len(self.str_bases)
 
 
