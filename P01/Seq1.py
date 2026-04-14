@@ -39,4 +39,18 @@ class Seq:
         else:
             return self.str_bases[::-1]
 
-
+    def complement(self):
+        if self.str_bases == "NULL" or self.str_bases == "ERROR":
+            return self.str_bases
+        else:
+            complement = ""
+            for i in range(len(self.str_bases)):
+                if self.str_bases[i] == "A":
+                    complement += "T"
+                elif self.str_bases[i] == "T":
+                    complement += "A"
+                elif self.str_bases[i] == "G":
+                    complement += "C"
+                elif self.str_bases[i] == "C":
+                    complement += "G"
+            return complement

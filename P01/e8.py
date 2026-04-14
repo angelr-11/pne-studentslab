@@ -1,26 +1,13 @@
 from Seq1 import Seq
-print("-----| Practice 1 Exercise 8 |------")
-seq = Seq("TATAC")
-seq2 = Seq()
-seq3 =Seq("Invalid")
-rev1 = seq.reverse()
-rev2 = seq2.reverse()
-rev3 = seq3.reverse()
-comp1 = seq.seq_complement()
-comp2 = seq2.seq_complement()
-comp3 = seq3.seq_complement()
-print(f"Sequence 1: {seq} (Length: {seq.length()}) ")
-print(f"Bases: {seq.count()}")
-print(f"Reverse: {rev1}")
-print(f"Comp: {comp1}")
-print()
-print(f"Sequence 2: {seq2} (Length: {seq2.length()}) ")
-print(f"Bases: {seq2.count()}")
-print(f"Reverse: {rev2}")
-print(f"Comp: {comp2}")
-print()
-print(f"Sequence 3: {seq3} (Length: {seq3.length()}) ")
-print(f"Bases: {seq3.count()}")
-print(f"Reverse: {rev3}")
-print(f"Comp: {comp3}")
-print()
+
+s1 = Seq()
+s2 = Seq("ACTGA")
+s3 = Seq("Invalid sequence")
+
+sequences = [s1, s2, s3]
+
+for i, s in enumerate(sequences, start=1):
+    print(f"Sequence {i}: (Length: {s.len()}) {s.str_bases}")
+    print("  Bases: ", s.count_())
+    print("  Rev:", s.reverse())
+    print("  Comp:", s.complement())
