@@ -26,5 +26,11 @@ class Seq:
                     base_count += 1
             return base_count
 
+    def count_(self):
+        bases = ["A", "C", "T", "G"]
+        d = {}
+        for i in bases:
+            d[i] = self.scb(i)
+        return d
 
 

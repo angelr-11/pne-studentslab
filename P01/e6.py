@@ -8,5 +8,4 @@ sequences = [s1, s2, s3]
 
 for i, s in enumerate(sequences, start=1):
     print(f"Sequence {i}: (Length: {s.len()}) {s.str_bases}")
-    d = {"A": s.scb("A"), "C": s.scb("C"), "T": s.scb("T"), "G": s.scb("G")}
-    print(d)
+    print(s.count_())
