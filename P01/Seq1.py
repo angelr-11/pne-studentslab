@@ -16,4 +16,15 @@ class Seq:
         else:
             return len(self.str_bases)
 
+    def scb(self, base):
+        base_count = 0
+        if base == "NULL" or base == "ERROR":
+            return base_count
+        else:
+            for i in self.str_bases:
+                if i == base:
+                    base_count += 1
+            return base_count
+
+
 
