@@ -1,6 +1,8 @@
 from Seq1 import Seq
-print("-----| Practice 1 Exercise 2 |------")
-seq = Seq("TATAC")
-seq2 = Seq()
-print(f"Sequence 1: {(seq)}")
-print(f"Sequence 2: {(seq2)}")
+
+null_seq = Seq()
+seq1 = Seq("TATAC")
+seq2 = Seq("TATAX")
+
+print(f"Sequence 1: {null_seq.str_bases}")
+print(f"Sequence 2: {seq1.str_bases}")
