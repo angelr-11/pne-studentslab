@@ -1,20 +1,12 @@
 from Seq1 import Seq
-print("-----| Practice 1 Exercise 7 |------")
-seq = Seq("TATAC")
-seq2 = Seq()
-seq3 =Seq("Invalid")
-rev1 = seq.reverse()
-rev2 = seq2.reverse()
-rev3 = seq3.reverse()
-print(f"Sequence 1: {seq} (Length: {seq.length()}) ")
-print(f"Bases: {seq.count()}")
-print(f"Reverse: {rev1}")
-print()
-print(f"Sequence 2: {seq2} (Length: {seq2.length()}) ")
-print(f"Bases: {seq2.count()}")
-print(f"Reverse: {rev2}")
-print()
-print(f"Sequence 3: {seq3} (Length: {seq3.length()}) ")
-print(f"Bases: {seq3.count()}")
-print(f"Reverse: {rev3}")
-print()
+
+s1 = Seq()
+s2 = Seq("ACTGA")
+s3 = Seq("Invalid sequence")
+
+sequences = [s1, s2, s3]
+
+for i, s in enumerate(sequences, start=1):
+    print(f"Sequence {i}: (Length: {s.len()}) {s.str_bases}")
+    print(s.count_())
+    print("Rev:", s.reverse())

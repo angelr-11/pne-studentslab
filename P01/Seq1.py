@@ -33,4 +33,10 @@ class Seq:
             d[i] = self.scb(i)
         return d
 
+    def reverse(self):
+        if self.str_bases == "NULL" or self.str_bases == "ERROR":
+            return self.str_bases
+        else:
+            return self.str_bases[::-1]
+
 
