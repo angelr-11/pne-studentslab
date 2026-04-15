@@ -64,3 +64,17 @@ class Seq:
         body = split_c[1]
         self.str_bases = body
         return self.str_bases
+
+    def mfb_finder(self):
+        counter = {"A": 0, "T": 0, "C": 0, "G": 0}
+        for i in self.str_bases:
+            if i in counter:
+                counter[i] += 1
+        max_base = None
+        max_count = -1
+        for k in counter:
+            if counter[k] > max_count:
+                max_count = counter[k]
+                max_base = k
+
+        return max_base
