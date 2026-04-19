@@ -1,6 +1,6 @@
 import socket
 
-PORT = 8080
+PORT = 8081
 IP = "127.0.0.1"
 
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
