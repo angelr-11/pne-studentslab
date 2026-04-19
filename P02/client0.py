@@ -1,3 +1,6 @@
+import socket
+
+
 class Client:
     def __init__(self, ip:str, port:int):
         self.IP = ip
@@ -10,4 +13,12 @@ class Client:
         print("OK")
 
     def talk(self, message:str):
-        return
+        soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        soc.connect((self.IP, self.PORT))
+
+        soc.send(str.encode(message))
+
+        response = soc.recv(2048).decode("utf-8")
+        soc.close()
+        return response
+
