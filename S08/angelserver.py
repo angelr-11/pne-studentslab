@@ -1,5 +1,5 @@
 import socket
-
+import termcolor
 
 PORT = 8081
 IP = "127.0.0.1"
@@ -25,7 +25,7 @@ try:
         print("Message from client: {}".format(msg))
 
 
-        message = "Hello from the teacher's server\n"
+        message = termcolor.colored("Hello from the teacher's server\n", "green")
         send_bytes = str.encode(message)
 
         clientsocket.send(send_bytes)

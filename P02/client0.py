@@ -1,5 +1,5 @@
 import socket
-
+import termcolor
 
 class Client:
     def __init__(self, ip:str, port:int):
@@ -12,7 +12,7 @@ class Client:
     def ping(self):
         print("OK")
 
-    def talk(self, message:str):
+    def talk(self, message):
         soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         soc.connect((self.IP, self.PORT))
 
