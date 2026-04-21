@@ -15,9 +15,9 @@ c = Client(IP, PORT)
 s = Seq()
 
 for i in genes:
-    m = termcolor.colored(f"Sending {i} Gene to the server", "blue")
-    print("To server:", m)
+    m = f"Sending {i} Gene to the server"
+    print("To server:", termcolor.colored(m,"blue"))
     print(f"From server:\n {c.talk(m)}")
-    seq = termcolor.colored(s.read_fasta(i)[:50], "blue")
-    print("To server:", seq)
+    seq = s.read_fasta(i)[:50]
+    print("To server:", termcolor.colored(seq,"blue"))
     print(f"From server:\n {c.talk(seq)}")
