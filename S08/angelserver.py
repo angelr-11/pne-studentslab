@@ -21,7 +21,7 @@ try:
 
         print("CONNECTION: {}. From the IP: {}".format(number_con, address))
 
-        msg = clientsocket.recv(2048).decode("utf-8")
+        msg = termcolor.colored(clientsocket.recv(2048).decode("utf-8"), "green")
         print("Message from client: {}".format(msg))
 
 

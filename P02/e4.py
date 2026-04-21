@@ -4,7 +4,7 @@ import termcolor
 PRACTICE = 2
 EXERCISE = 4
 
-genes = ["U5"]
+genes = ["U5", "ADA", "FRAT1"]
 
 print(f"-----| Practice {PRACTICE}, Exercise {EXERCISE} |------")
 
