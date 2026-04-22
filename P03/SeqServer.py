@@ -61,13 +61,8 @@ while True:
             elif parts[0] == "GENE" and parts[1] in gene_names:
                 gene = Seq1.Seq()
                 rs = f"""Gene {parts[1]}: {gene.read_fasta(parts[1])}\n"""
-
-
-
         else:
             rs = "error"
-
-
 
         cs.send(f"{rs}".encode())
         cs.close()
