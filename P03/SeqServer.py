@@ -47,7 +47,10 @@ while True:
                     G: {eseq.scb("G")} ({round((eseq.scb("G")/eseq.len())*100,2)}%)
                     T: {eseq.scb("T")} ({round((eseq.scb("T")/eseq.len())*100,2)}%)\n"""
                     print(rs)
-
+            #e4
+            elif parts[0] == "COMP":
+                eseq = Seq1.Seq(parts[1])
+                rs = f"""Sequence: {eseq.str_bases}\nComplement: {eseq.complement()}\n"""
         else:
             rs = "error"
 
