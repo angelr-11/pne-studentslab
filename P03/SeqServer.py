@@ -2,7 +2,7 @@ import socket
 import termcolor
 from P01 import Seq1
 
-
+gene_names = ["U5","ADA","FRAT1", "FXN", "RNU6_269P"]
 PORT = 8080
 IP = "127.0.0.1"
 
@@ -51,6 +51,19 @@ while True:
             elif parts[0] == "COMP":
                 eseq = Seq1.Seq(parts[1])
                 rs = f"""Sequence: {eseq.str_bases}\nComplement: {eseq.complement()}\n"""
+                print(eseq.complement())
+            #e5
+            elif parts[0] == "REV":
+                eseq = Seq1.Seq(parts[1])
+                rs = f"""Sequence: {eseq.str_bases}\nReverse: {eseq.reverse()}\n"""
+                print(eseq.reverse())
+            #e6
+            elif parts[0] == "GENE" and parts[1] in gene_names:
+                gene = Seq1.Seq()
+                rs = f"""Gene {parts[1]}: {gene.read_fasta(parts[1])}\n"""
+
+
+
         else:
             rs = "error"
 
