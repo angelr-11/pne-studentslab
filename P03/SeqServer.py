@@ -41,11 +41,11 @@ while True:
                     rs = "NON VALID SEQUENCE"
                 else:
                     rs = f"""Sequence: {eseq.str_bases}
-                    Total length: {eseq.len()}
-                    A: {eseq.scb("A")} ({round((eseq.scb("A")/eseq.len())*100,2)}%)
-                    C: {eseq.scb("C")} ({round((eseq.scb("C")/eseq.len())*100,2)}%)
-                    G: {eseq.scb("G")} ({round((eseq.scb("G")/eseq.len())*100,2)}%)
-                    T: {eseq.scb("T")} ({round((eseq.scb("T")/eseq.len())*100,2)}%)\n"""
+Total length: {eseq.len()}
+A: {eseq.scb("A")} ({round((eseq.scb("A")/eseq.len())*100,2)}%)
+C: {eseq.scb("C")} ({round((eseq.scb("C")/eseq.len())*100,2)}%)
+G: {eseq.scb("G")} ({round((eseq.scb("G")/eseq.len())*100,2)}%)
+T: {eseq.scb("T")} ({round((eseq.scb("T")/eseq.len())*100,2)}%)\n"""
                     print(rs)
             #e4
             elif parts[0] == "COMP":
@@ -60,7 +60,7 @@ while True:
             #e6
             elif parts[0] == "GENE" and parts[1] in gene_names:
                 gene = Seq1.Seq()
-                rs = f"""Gene {parts[1]}: {gene.read_fasta(parts[1])}\n"""
+                rs = f"""Gene {parts[1]}: {gene.read_fasta(parts[1])[:50]}\n"""
         else:
             rs = "error"
 
