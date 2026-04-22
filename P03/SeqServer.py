@@ -28,12 +28,14 @@ while True:
         #e1
         if command == "PING":
             rs = "OK!"
+
         elif len(parts) == 2:
             #e2
             if parts[0] == "GET" and parts[1].isdigit() and 0 <= int(parts[1]) <= 4:
                 n = int(parts[1])
                 seqs = {0: "AAA", 1:"TTT", 2:"GGG", 3:"CCC", 4:"ATC"}
                 rs = seqs.get(n,"error")
+
             #e3
             elif parts[0] == "INFO":
                 eseq = Seq1.Seq(parts[1])
@@ -46,24 +48,25 @@ A: {eseq.scb("A")} ({round((eseq.scb("A")/eseq.len())*100,2)}%)
 C: {eseq.scb("C")} ({round((eseq.scb("C")/eseq.len())*100,2)}%)
 G: {eseq.scb("G")} ({round((eseq.scb("G")/eseq.len())*100,2)}%)
 T: {eseq.scb("T")} ({round((eseq.scb("T")/eseq.len())*100,2)}%)\n"""
-                    print(rs)
+
             #e4
             elif parts[0] == "COMP":
                 eseq = Seq1.Seq(parts[1])
                 rs = f"""Sequence: {eseq.str_bases}\nComplement: {eseq.complement()}\n"""
-                print(eseq.complement())
+
             #e5
             elif parts[0] == "REV":
                 eseq = Seq1.Seq(parts[1])
                 rs = f"""Sequence: {eseq.str_bases}\nReverse: {eseq.reverse()}\n"""
-                print(eseq.reverse())
+
             #e6
             elif parts[0] == "GENE" and parts[1] in gene_names:
                 gene = Seq1.Seq()
                 rs = f"""Gene {parts[1]}: {gene.read_fasta(parts[1])[:50]}\n"""
+
         else:
             rs = "error"
-
+        print(rs)
         cs.send(f"{rs}".encode())
         cs.close()
 
