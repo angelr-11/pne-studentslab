@@ -15,20 +15,21 @@ def process_client(s):
 
     print("Request line: ", end="")
     termcolor.cprint(req_line, "green")
-    try:
+
+    if req_line.split(" ")[1] == "/":
         file = PATH + "html/index.html"
         content = open(file)
-        body = content.read()
-        content.close()
-    except FileNotFoundError:
-        file = PATH + "html/error.html"
-        content = open(file)
-        body = content.read()
-        content.close()
     else:
-        file = PATH + "index.html"
-        content = open(file)
-        body = content.read()
+        try:
+            file = PATH + "html" + str(req_line).split(" ")[1] + ".html"
+            content = open(file)
+        except FileNotFoundError:
+            file = PATH + "html/error.html"
+            content = open(file)
+
+    body = content.read()
+    content.close()
+
 
     status_line = "HTTP/1.1 200 OK\n"
     header = "Content-Type: text/html\n"
