@@ -3,7 +3,7 @@ import termcolor
 
 IP = "127.0.0.1"
 PORT = 8080
-PATH = "../P04/html/info/"
+PATH = "../P04/"
 
 def process_client(s):
     req_raw = s.recv(2000)
@@ -16,7 +16,8 @@ def process_client(s):
     print("Request line: ", end="")
     termcolor.cprint(req_line, "green")
 
-    content = open(PATH + "A.html")
+    file = PATH + "html" + str(req_line).split(" ")[1] + ".html"
+    content = open(file)
     body = content.read()
     content.close()
 
