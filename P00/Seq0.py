@@ -1,6 +1,6 @@
 from pathlib import Path
 
-#e1
+#e1.txt
 
 def seq_ping():
     print("OK")

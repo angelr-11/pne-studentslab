@@ -1,0 +1,11 @@
+for URL: http://127.0.0.1:8080/hello
+Request line: GET /hello HTTP/1.1
+Path: /hello
+
+for URL: http://127.0.0.1:8080/file.html
+Request line: GET /file.html HTTP/1.1
+Path: /file.html
+
+for URL: http://127.0.0.1:8080/hello
+Request line: GET /hi/there?name=virus&type=corona HTTP/1.1
+Path: /hi/there?name=virus&type=corona

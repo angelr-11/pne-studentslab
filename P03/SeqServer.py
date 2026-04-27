@@ -25,7 +25,7 @@ while True:
         command = msg_raw.decode().strip()
         parts = command.split()
         print(f"Incoming command: {termcolor.colored(command,"green")}")
-        #e1
+        #e1.txt
         if command == "PING":
             rs = "OK!"
 
