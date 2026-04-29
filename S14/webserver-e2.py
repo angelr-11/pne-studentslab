@@ -1,0 +1,53 @@
+import http.server
+import socketserver
+import termcolor
+
+
+PORT = 8080
+socketserver.TCPServer.allow_reuse_address = True
+
+# Class with our Handler. It is a called derived from BaseHTTPRequestHandler
+# It means that our class inherits all his methods and properties
+class TestHandler(http.server.BaseHTTPRequestHandler):
+
+    def do_GET(self):
+        """This method is called whenever the client invokes the GET method
+        in the HTTP protocol request"""
+
+        termcolor.cprint(self.requestline, 'green')
+        if self.requestline.split(" ")[1] in ["/", "/index.html"] :
+            file = open("../S14/index.html")
+            contents = file.read()
+            file.close()
+        else:
+            file = open("../S14/error.html")
+            contents = file.read()
+            file.close()
+
+
+        self.send_response(200)
+
+        self.send_header('Content-Type', 'text/html')
+        self.send_header('Content-Length', len(contents.encode()))
+
+        self.end_headers()
+
+        self.wfile.write(contents.encode())
+
+        return
+
+
+Handler = TestHandler
+
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+
+    print("Serving at PORT", PORT)
+
+    # -- Main loop: Attend the client. Whenever there is a new
+    # -- clint, the handler is called
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("")
+        print("Stopped by the user")
+        httpd.server_close()
