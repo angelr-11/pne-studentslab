@@ -4,9 +4,10 @@ import termcolor
 from pathlib import Path
 
 PORT = 8080
-
 socketserver.TCPServer.allow_reuse_address = True
 
+# Class with our Handler. It is a called derived from BaseHTTPRequestHandler
+# It means that our class inherits all his methods and properties
 class TestHandler(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
@@ -14,19 +15,15 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         in the HTTP protocol request"""
 
         termcolor.cprint(self.requestline, 'green')
+        client_request = self.requestline.split(" ")[1]
+        try:
+            if client_request == "/":
+                contents = Path(f"../P05/html/index.html").read_text()
+            else:
+                contents = Path(f"../P05/html/{client_request}.html").read_text()
+        except FileNotFoundError:
+            contents = Path(f"../P05/html/error.html").read_text()
 
-        if self.path == "/" or self.path == "/index":
-            contents = Path("html/index.html").read_text()
-        elif self.path == "/info/A":
-            contents = Path("html/info/A.html").read_text()
-        elif self.path == "/info/C":
-            contents = Path("html/info/C.html").read_text()
-        elif self.path == "/info/T":
-            contents = Path("html/info/T.html").read_text()
-        elif self.path == "/info/G":
-            contents = Path("html/info/G.html").read_text()
-        else:
-            contents = Path("html/error.html").read_text()
 
         self.send_response(200)
 
@@ -39,12 +36,15 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
         return
 
+
 Handler = TestHandler
 
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
 
     print("Serving at PORT", PORT)
 
+    # -- Main loop: Attend the client. Whenever there is a new
+    # -- clint, the handler is called
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
