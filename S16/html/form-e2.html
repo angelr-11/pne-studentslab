@@ -2,13 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>FORM 1</title>
+    <title>FORM e2</title>
   </head>
-  <body>
+  <body style="background-color: yellow;">
+    <h1>Echo server</h1>
     <form action="/submit" method="GET">
-      <label for="message">Message to send to the server:</label>
-      <input type="text" name="message">
-      <input type="submit" value="SEND">
+      <div>
+        <label for="message">Message to send to the server:</label>
+      </div>
+      <div>
+        <input type="text" name="message">
+        <input type="submit" value="SEND">
+      </div>
+      <div>
+        <label for="check">Message in capital letters</label>
+        <input type="checkbox" name="check" >
+      </div>
     </form>
   </body>
 </html>

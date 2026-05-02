@@ -23,7 +23,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         command = self.requestline.split(" ")[1]
 
         if command in ["/", "/echo"]:
-            contents = Path("../S16/html/form-1.html").read_text()
+            contents = Path("../S16/html/form-e1.html").read_text()
         elif "message" in usermsg:
             text = usermsg.get("message")[0]
             my_data = {"todisplay": text}
