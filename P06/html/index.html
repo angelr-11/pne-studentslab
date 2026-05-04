@@ -2,42 +2,29 @@
     <html lang="en" dir="ltr">
       <head>
         <meta charset="utf-8">
-        <title>Seq2 server</title>
+        <title>INDEX</title>
       </head>
       <body>
-        <h1>Access to server</h1>
-        <p>__________________________________________</p>
-        Is the server alive?
-        <a href="[[lnk]]/ping">
-          <button>Ping</button>
-        </a>
-        <br>
-        Get a sequence. Select sequence number:
-        <form action="echo" method="get">
-          <select name="get_sequence">
-            [[options_seq]]
+        <h1>SEQ2 server</h1>
+        <p>Access to the server  </p>
+        <hr>
+        <form action="/ping" method="get">
+          <label>Is the server alive?</label>
+          <input type="submit" value="PING">
+        </form>
+        <hr>
+        <form action="/get" method="get">
+          <label for="menu">Get a sequence. Select a sequence number</label>
+          <select name="menu" size="1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
           </select>
-          <input type="submit" value="GET"/>
-        </form>
-        <br>
-        Get a gene. Select gene name:
-        <form action="echo" method="get">
-          <select name="get_gene">
-            [[options_gene]]
-          </select>
-          <input type="submit" value="Gene"/>
-        </form>
-        <br>
-        <form action="operation" method="get">
-          Enter sequence: <input type="text" name="sequence">
-          <br>
-          Operation:
-          <input type="radio" name="op" value="Info" checked> Info
-          <input type="radio" name="op" value="Complement"> Complement
-          <input type="radio" name="op" value="Reverse"> Reverse
-          <br>
-          <input type="submit" value="Operate"/>
-        </form>
+          <input type="submit" value="GET">
 
+
+        </form>
       </body>
     </html>
