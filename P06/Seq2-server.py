@@ -4,6 +4,7 @@ from urllib.parse import parse_qs, urlparse
 import termcolor
 from pathlib import Path
 import jinja2 as j
+from P01 import Seq1
 
 
 PORT = 8080
@@ -31,6 +32,12 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             seq = seqs.get(n)
             template = read_html_file("get.html")
             contents = template.render(number=n, sequence=seq)
+        elif command.path == "/gene" and "gene" in usri:
+            gene = usri.get("gene")[0]
+            seq = Seq1.Seq().read_fasta(gene)[:1000]
+            template = read_html_file("gene.html")
+            contents = template.render(gen=gene, sequence=seq)
+
         else:
             contents = Path(PATH + "error.html").read_text()
 
