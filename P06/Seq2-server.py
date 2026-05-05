@@ -37,7 +37,24 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             seq = Seq1.Seq().read_fasta(gene)[:1000]
             template = read_html_file("gene.html")
             contents = template.render(gen=gene, sequence=seq)
+        elif command.path == "/operation" and "opt" in usri and "an_seq" in usri:
+            oper = usri.get("opt")[0]
+            seq = usri.get("an_seq")[0]
+            r = Seq1.Seq(seq)
+            if oper == "Info":
+                l = r.len()
+                a_ = f"{r.scb("A")} ({round(r.scb("A") / l * 100, 2)})"
+                c_ = f"{r.scb("C")} ({round(r.scb("C") / l * 100, 2)})"
+                g_ = f"{r.scb("G")} ({round(r.scb("G") / l * 100, 2)})"
+                t_ = f"{r.scb("T")} ({round(r.scb("T") / l * 100, 2)})"
 
+
+            elif oper == "Comp":
+                result_ = r.complement()
+            elif oper == "Rev":
+                result_ = r.reverse()
+            template = read_html_file("operation.html")
+            contents = template.render(sequence=seq, operation=oper, result = result_, a = a_, )
         else:
             contents = Path(PATH + "error.html").read_text()
 

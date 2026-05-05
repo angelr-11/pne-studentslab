@@ -36,5 +36,20 @@
           </select>
           <input type="submit" value="GENE">
         </form>
+        <hr>
+        <form action="/operation" method="get":>
+          Write a sequence: <input type="text" name="an_seq">
+          <div>
+            <span>Select operation</span>
+            <label><input type="radio" name="opt" value="Info"> Info</label>
+            <label><input type="radio" name="opt" value="Comp"> Comp</label>
+            <label><input type="radio" name="opt" value="Rev"> Rev</label>
+          </div>
+          <div>
+            Perform operation <input type="submit" value="OPERATE!">
+          </div>
+        </form>
+
+
       </body>
     </html>
