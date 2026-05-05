@@ -42,19 +42,13 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             seq = usri.get("an_seq")[0]
             r = Seq1.Seq(seq)
             if oper == "Info":
-                l = r.len()
-                a_ = f"{r.scb("A")} ({round(r.scb("A") / l * 100, 2)})"
-                c_ = f"{r.scb("C")} ({round(r.scb("C") / l * 100, 2)})"
-                g_ = f"{r.scb("G")} ({round(r.scb("G") / l * 100, 2)})"
-                t_ = f"{r.scb("T")} ({round(r.scb("T") / l * 100, 2)})"
-
-
+                result_ = r.info()
             elif oper == "Comp":
                 result_ = r.complement()
             elif oper == "Rev":
                 result_ = r.reverse()
             template = read_html_file("operation.html")
-            contents = template.render(sequence=seq, operation=oper, result = result_, a = a_, )
+            contents = template.render(sequence=seq, operation=oper, result = result_)
         else:
             contents = Path(PATH + "error.html").read_text()
 
