@@ -79,10 +79,11 @@ class Seq:
 
         return max_base
 
+#Final project function
     def info(self):
         result = f"Sequence: {self.str_bases}\n"
         result += f"Total length: {self.len()}\n"
         d = self.count_()
         for i,j in d.items():
-            result += f"{i}: {j} ({(j/self.len())*100}%)\n"
+            result += f"{i}: {j} ({round((j/self.len())*100,1)}%)\n"
         return result
