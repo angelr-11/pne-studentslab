@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        List of Species in the Browser
+    </title>
+</head>
+<body style="background-color: lightcyan; font-family: 'Inter', sans-serif;
+font-size: xx-large;">
+    <h1>
+        Total number of species available in the browser: {{ total }}
+    </h1>
+    <strong>
+        Selected limit: {{ limit }}
+    </strong>
+    <br>
+    <p>
+      <a href="http://127.0.0.1:8080/">
+        Main Page
+      </a>
+    </p>
+    <strong>
+        The names of the species are:
+    </strong>
+    <ul>
+        {% for name in species %}
+            <li>{{name}}</li>
+        {% endfor %}
+    </ul>
+    <p>
+      <a href="http://127.0.0.1:8080/">
+        Main Page
+      </a>
+    </p>
+</body>
+</html>
